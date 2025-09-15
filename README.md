@@ -1,4 +1,4 @@
-![Girl drinking water](https://upload.wikimedia.org/wikipedia/commons/0/02/Drinking_water_from_tap.jpg)
+![Girl drinking water]()
 
 
 # Tanzania Water Wells: Predictive Modeling for Sustainable Access
