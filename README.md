@@ -1,6 +1,7 @@
 ![Girl drinking water](https://media.istockphoto.com/id/474251868/photo/african-black-child-drinking-fresh-water-from-tap.jpg?s=2048x2048&w=is&k=20&c=GU8vIanquM5innnLJpqa8AyJE98LPhQCVaQ8Gyhh_PY=)
 
-#### AUTHOR: *NORMAN*
+#### **AUTHOR:** [NORMAN](https://www.linkedin.com/in/norman-mwapea-49502a264/)
+
 # FLOW STATE: MAPPING TANZANIA'S WATER WELLS
 
 Access to safe and reliable water remains a daily uncertainty for millions of Tanzanians.  
