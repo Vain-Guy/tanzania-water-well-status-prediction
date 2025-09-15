@@ -1,4 +1,9 @@
-![Girl drinking water from faucet](https://media.istockphoto.com/id/474251868/photo/african-black-child-drinking-fresh-water-from-tap.jpg?s=1024x1024&w=is&k=20&c=VBE3pYzkkeVuYl2DmacOzzyT6uRCyqq9A8FnLRdMAbE=)
+<div align="center">
+  <img src="https://media.istockphoto.com/id/474251868/photo/african-black-child-drinking-fresh-water-from-tap.jpg?s=1024x1024&w=is&k=20&c=VBE3pYzkkeVuYl2DmacOzzyT6uRCyqq9A8FnLRdMAbE=" 
+       alt="Girl drinking water from faucet"
+       style="width:400px; border-radius:15px;">
+</div>
+
 
 
 # Business Understanding
