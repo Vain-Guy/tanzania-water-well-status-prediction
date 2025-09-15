@@ -1,3 +1,6 @@
+![Girl drinking water from faucet](https://media.istockphoto.com/id/474251868/photo/african-black-child-drinking-fresh-water-from-tap.jpg?s=1024x1024&w=is&k=20&c=VBE3pYzkkeVuYl2DmacOzzyT6uRCyqq9A8FnLRdMAbE=)
+
+
 # Business Understanding
 
 In Tanzania, over 57 million people rely on wells for their daily water supply. Unfortunately, many of these wells either break down or fall into disrepair, leaving communities without clean water for long periods.
