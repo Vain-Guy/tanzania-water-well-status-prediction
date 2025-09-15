@@ -108,10 +108,13 @@ We tuned models with 5-fold cross-validation and compared them on metrics most r
 - “82 % recall” means roughly 8 out of 10 failing wells would be flagged in advance for maintenance.
 
 ### LIMITATIONS
-- **Data drift:** Historical data may not perfectly reflect current well conditions or management practices.
-- **Class exclusion:** Dropping “needs repair” improved stability but reduced granularity; borderline cases may not be well captured.
-- **Regional heterogeneity:** Model accuracy may vary by region or basin if local factors differ.
-- **Unknown fields:** Missing management, payment, or quality data can reduce reliability.
+
+- **Data drift and timeliness:** The dataset reflects historical conditions. Management practices, technology usage, and environmental stress may have changed since collection, so predictions on today’s wells may be less accurate without periodic retraining.
+- **Dropped class granularity:** The “functional but needs repair” category was excluded to stabilize and simplify the model. This improves performance but loses detail about borderline cases. In practice, some wells flagged as functional may still need attention.
+- **Regional and basin heterogeneity:** Model performance can vary by region, basin, or extraction technology. A model trained on national data may underperform in areas with unique conditions or very few records.
+- **Incomplete and inconsistent data:** Unknown categories can lead to biased predictions for underrepresented groups.
+- **Non-static factors:** Sudden shocks (droughts, floods, contamination) and behavioral changes aren’t captured by static historical features, so the model may miss emerging risks.
+- **Operational deployment risks:** If predictions are used directly to prioritize maintenance, false negatives (failing wells missed) could leave communities without water; false positives (healthy wells flagged) could waste scarce maintenance resources. A human-in-the-loop review is recommended.
 
 If deployed in production, the model should be periodically retrained with fresh data and monitored for performance degradation, especially in under-represented regions or technologies.
 
