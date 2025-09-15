@@ -1,4 +1,4 @@
-![Girl drinking water]()
+![Girl drinking water](https://media.istockphoto.com/id/474251868/photo/african-black-child-drinking-fresh-water-from-tap.jpg?s=2048x2048&w=is&k=20&c=GU8vIanquM5innnLJpqa8AyJE98LPhQCVaQ8Gyhh_PY=)
 
 
 # Tanzania Water Wells: Predictive Modeling for Sustainable Access
