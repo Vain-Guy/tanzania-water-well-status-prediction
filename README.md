@@ -114,17 +114,17 @@ For a more detailed view of this workflow, preview the notebook in the Notebooks
 
 .  
 ├── Data/  
-│   ├── Test set values.csv            # Test features  
-│   ├── Training set labels.csv        # Training labels  
-│   └── Training set values.csv        # Training features  
+│   ├── Test set values.csv                 # Test features  
+│   ├── Training set labels.csv             # Training labels  
+│   └── Training set values.csv             # Training features  
 ├── Image/  
-│   └── Ahjin Logo.png                 # Company logo  
+│   └── Ahjin Logo.png                      # Company logo  
 ├── Notebooks/  
-│   └── index.ipynb                    # Jupyter notebook (cleaning, EDA & modeling)  
-├── .gitignore                         # Git ignore rules  
-├── LICENSE                            # License file  
-├── PRESENTATION.pdf                   # Project presentation  
-├── README.md                          # Project overview and instructions  
-└── TANZANIA WATER WELLS DATA REPORT.pdf  # Data report  
+│   └── index.ipynb                         # Jupyter notebook (cleaning, EDA & modeling)  
+├── .gitignore                              # Git ignore rules  
+├── LICENSE                                 # License file  
+├── PRESENTATION.pdf                        # Project presentation  
+├── README.md                               # Project overview and instructions  
+└── TANZANIA WATER WELLS DATA REPORT.pdf    # Data report  
 
 
