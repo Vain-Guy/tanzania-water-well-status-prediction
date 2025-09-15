@@ -69,34 +69,42 @@ The Tanzanian Water Sector Development Program (WSDP) and SDG-6 (Clean Water and
 
 ## MODELING
 
-A total of 5 models were trained: Logistic Regression, Decision Trees, Random Forest, XGBoost and KNearest-Neighbor.
+We reframed the “Pump It Up” challenge as a binary classification task (Functional vs. Non-Functional wells) because the “Functional-needs-repair” class was both ambiguous and only 6.6 % of the data.  
+Machine learning, rather than simple descriptive analysis, is appropriate because:
 
-- **Target:** Binary classification (Functional vs. Non-Functional). The target was made from a multiclass problem to a binary classification problem. 
-- Justification:
-    - This class represented only 6.58% of the data, making it statistically insignificant and highly imbalanced.
-    - Operationally, the label is ambiguous. Wells needing repair often transition into either functional or non-functional categories in reality.
-    - Keeping it introduced noise and instability into model learning with little gain in actionable insights.
-    - By dropping this class, the problem was reframed as a binary classification task:
-        - Functional wells
-        - Non-functional wells (treated as the minority and the class of highest interest).
-- This reframing improved model performance and interpretability, though it reduced granularity on borderline repairable wells.
+- The dataset is large (≈59 k records) and highly multivariate (geographic, managerial, technical, quality features).
+- Relationships between predictors and well status are nonlinear and complex (e.g interaction of technology, region, and payment type).
+- Stakeholders need proactive, record-level predictions (“which well is at risk?”) not just summary trends.
 
-- **Baseline models:** Logistic Regression, Decision Tree, KNN.
-- **Ensemble models:** Random Forest, XGBoost, CatBoost.
-- **Imbalance handling:** Class weighting and SMOTE.
-- **Hyperparameter tuning:** GridSearchCV & RandomizedSearchCV (5-fold CV).
-- **Metrics:** Accuracy, recall on non-functional wells, precision, F1-score, ROC-AUC.
+This justified trying ensemble methods (Random Forest, XGBoost) with imbalance handling, rather than only logistic regression or univariate thresholds.
 
-### TUNED MODEL RESULTS
+### RESULTS
+We tuned models with 5-fold cross-validation and compared them on metrics most relevant to the business need: **recall on non-functional wells** (catch as many failing wells as possible) and overall **accuracy/F1** (avoid too many false alarms).
 
 | Model & Strategy                    | Test Accuracy | Minority Recall | F1-Score (Macro) | ROC-AUC |
 |------------------------------------|---------------|-----------------|-----------------|---------|
-| **XGBoost + class weights (GridSearchCV)** | 86.77 %       | 82 %            | 0.86            | 0.935   |
-| Random Forest + SMOTE (GridSearchCV)| 86.01 %       | 82 %            | 0.85            | 0.931   |
-| XGBoost + class weights (Randomized) | 86.48 %      | 82 %            | 0.86            | 0.934   |
+| **XGBoost + class weights (GridSearchCV)** | 86.77 % | 82 % | 0.86 | 0.935 |
+| Random Forest + SMOTE (GridSearchCV) | 86.01 % | 82 % | 0.85 | 0.931 |
+| XGBoost + class weights (Randomized) | 86.48 % | 82 % | 0.86 | 0.934 |
 
-- **XGBoost with class weights & GridSearchCV** chosen as final model: strong accuracy, stable training, high recall on non-functional wells.
-- Random Forest competitive but showed overfitting with SMOTE.
+- **Why these metrics:** recall on non-functional wells = fewer at-risk wells missed; ROC-AUC = model discrimination; F1 = balance between precision and recall.
+- “82 % recall” means roughly 8 out of 10 failing wells would be flagged in advance for maintenance.
+
+### LIMITATIONS
+- **Data drift:** Historical data may not perfectly reflect current well conditions or management practices.
+- **Class exclusion:** Dropping “needs repair” improved stability but reduced granularity; borderline cases may not be well captured.
+- **Regional heterogeneity:** Model accuracy may vary by region or basin if local factors differ.
+- **Unknown fields:** Missing management, payment, or quality data can reduce reliability.
+
+If deployed in production, the model should be periodically retrained with fresh data and monitored for performance degradation, especially in under-represented regions or technologies.
+
+### RECOMMENDATIONS
+- **Operational use:** Adopt the XGBoost with class weights and GridSearchCV as the production model; track recall on non-functional wells as a key KPI.
+- **Maintenance targeting:** Use predictions to schedule preventive maintenance visits, especially in regions and technologies historically prone to failure.
+- **Data improvements:** Collect more records for the “needs repair” category if granular triage is required; fill missing fields to improve feature quality.
+- **Policy planning:** Combine model outputs with cost and logistics data to optimize resource allocation across districts and basins.
+
+This approach balances technical performance with actionable insights for stakeholders, shifting the focus from building new wells to sustaining existing ones.
 
 ## INSIGHTS AND RECOMMENDATIONS
 
