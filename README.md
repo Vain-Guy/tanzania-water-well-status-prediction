@@ -25,6 +25,23 @@ The Tanzanian Water Sector Development Program (WSDP) and SDG-6 (Clean Water and
 - **Support data-driven planning:** Provide actionable insights to policymakers, NGOs and donors.
 - **Promote transparency and accountability:** Track well performance over time.
 
+## STAKEHOLDERS
+
+The beneficiaries of this project are:
+
+1. Tanzanian Ministry of Water
+2. Local Communities 
+3. Non-Governmental Organizations (NGOs) 
+4. Donors and Development Partners
+5. Local Governments (District & Regional Councils)
+6. Private Sector & Contractors
+7. ommunity-Based Water Committees (CBWCs)
+8. Data Scientists and Researchers
+9. Monitoring & Evaluation Teams 
+10. Policy Makers & Legislators 
+
+At the center of these stakeholders are Tanzanian households, schools, and clinics, whose health, dignity, and productivity depend on reliable access to safe water.
+
 ## DATA SOURCE
 
 - **Dataset:** [DrivenData “Pump It Up” competition](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/data/)
